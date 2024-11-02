@@ -3,15 +3,16 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "root": "npm run start -w root-config",
-    "app1": "npm run start -w app1",
-    "login": "npm run start -w login"
+    "root": "npm run start -w apps/root-config",
+    "app1": "npm run start -w apps/app1",
+    "login": "npm run start -w apps/login"
   },
   "author": "",
   "license": "MIT",
   "workspaces": [
-    "login",
-    "app1",
-    "root-config"
+    "apps/login",
+    "apps/root-config",
+    "lib",
+    "apps/app1"
   ]
 }

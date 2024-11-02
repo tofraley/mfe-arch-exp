@@ -10,12 +10,11 @@ import {
   constructLayoutEngine,
 } from "single-spa-layout";
 import microfrontendLayout from "./microfrontend-layout.html";
-import { IdleDetector } from "./idle-detector";
-import { authManager } from "./auth/mock-auth-manager";
+import { authManager } from "lib";
 
 // Handle multiple cleanup scenarios
-window.addEventListener("unload", () => idleDetector.destroy());
-window.addEventListener("beforeunload", () => idleDetector.destroy());
+window.addEventListener("unload", () => authManager.destroy());
+window.addEventListener("beforeunload", () => authManager.destroy());
 
 window.AuthService = {
   checkAuth: authManager.checkAuth,
@@ -29,7 +28,7 @@ const routes = constructRoutes(microfrontendLayout);
 const applications = constructApplications({
   routes,
   loadApp({ name }) {
-    console.log("app name", name);
+    // console.log("app name", name);
     // if (name === "@org/login") return System.import(name);
     // if (!authManager.checkAuth()) {
     //   navigateToUrl("/login");

@@ -1,0 +1,11 @@
+{
+  "name": "lib",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+  },
+  "author": "",
+  "license": "MIT"
+}
