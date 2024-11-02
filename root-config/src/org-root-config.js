@@ -30,9 +30,9 @@ const applications = constructApplications({
   routes,
   loadApp({ name }) {
     console.log("app name", name);
-    // if (name === "@org/app2") return System.import(name);
+    // if (name === "@org/login") return System.import(name);
     // if (!authManager.checkAuth()) {
-    //   navigateToUrl("/app2");
+    //   navigateToUrl("/login");
     //   return false;
     // }
     return System.import(name);
@@ -41,8 +41,8 @@ const applications = constructApplications({
 
 window.addEventListener("single-spa:before-routing-event", () => {
   const path = window.location.pathname;
-  if (path !== "/app2" && !authManager.checkAuth()) {
-    navigateToUrl("/app2");
+  if (path !== "/login" && !authManager.checkAuth()) {
+    navigateToUrl("/login");
   }
 });
 

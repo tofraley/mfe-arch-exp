@@ -1,5 +1,5 @@
 {
-  "name": "@org/app2",
+  "name": "@org/login",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",

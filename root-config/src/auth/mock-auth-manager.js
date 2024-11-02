@@ -24,7 +24,7 @@ export class MockAuthManager {
   logout() {
     console.log("Logging out");
     this.isLoggedIn = false;
-    navigateToUrl("/app2");
+    navigateToUrl("/login");
 
     if (this.idleDetector) {
       this.idleDetector.endIdleCheck();
