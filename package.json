@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "root": "npm run start -w apps/root-config",
-    "app1": "npm run start -w apps/app1",
-    "login": "npm run start -w apps/login"
+    "root": "npm run start --workspace apps/root-config",
+    "app1": "npm run start --workspace apps/app1",
+    "login": "npm run start --workspace apps/login"
   },
   "author": "",
   "license": "MIT",
