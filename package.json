@@ -3,8 +3,16 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "root": "npm run start -w root-config",
+    "app1": "npm run start -w app1",
+    "login": "npm run start -w login"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": [
+    "login",
+    "app1",
+    "root-config"
+  ]
 }
