@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   navigateToUrl,
   pathToActiveWhen,
@@ -10,7 +11,14 @@ import {
   constructLayoutEngine,
 } from "single-spa-layout";
 import microfrontendLayout from "./microfrontend-layout.html";
-import { authManager } from "lib";
+import { AuthManager } from "lib";
+
+const res = await fetch("/auth.json");
+
+if (!res.ok) throw Error("Could not load auth config");
+
+const authConf = await res.json();
+const authManager = new AuthManager(authConf);
 
 // Handle multiple cleanup scenarios
 window.addEventListener("unload", () => authManager.destroy());
@@ -38,8 +46,14 @@ const applications = constructApplications({
   },
 });
 
-window.addEventListener("single-spa:before-routing-event", () => {
+window.addEventListener("single-spa:before-routing-event", async () => {
   const path = window.location.pathname;
+  console.log("navigating to", path);
+  if (path == "/ui/auth") {
+    const user = await authManager.handleSigninCallback();
+    console.log("user", user);
+    navigateToUrl("/");
+  }
   if (path !== "/login" && !authManager.checkAuth()) {
     navigateToUrl("/login");
   }
