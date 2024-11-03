@@ -49,7 +49,7 @@ const applications = constructApplications({
 window.addEventListener("single-spa:before-routing-event", async () => {
   const path = window.location.pathname;
   console.log("navigating to", path);
-  if (path == "/ui/auth") {
+  if (path == "/auth/post-login") {
     const user = await authManager.handleSigninCallback();
     console.log("user", user);
     navigateToUrl("/");
