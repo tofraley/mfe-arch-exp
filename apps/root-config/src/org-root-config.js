@@ -28,24 +28,7 @@ function doStart() {
 }
 
 const path = window.location.pathname;
-// // Listening for specific single-spa routing events
-// window.addEventListener("single-spa:before-routing-event", async () => {
-//   const path = window.location.pathname;
 
-//   // Handle any routes needed during login flow, i.e. post sign-in redirect
-//   if (path == "/auth/post-login") {
-//     const user = await authManagerInstance.handleSigninCallback(doStart);
-//     // doStart();
-//   }
-
-//   // // This works like and auth guard
-//   // if (path !== "/login" && !authManagerInstance.checkAuth()) {
-//   //   navigateToUrl("/login");
-//   //   // authManagerInstance.login();
-//   // }
-// });
-
-// Handle any routes needed during login flow, i.e. post sign-in redirect
 switch (path) {
   case "/auth/post-login":
     const user = await authManager.handleSigninCallback(doStart);
@@ -58,9 +41,3 @@ switch (path) {
     }
     break;
 }
-
-// if (path == "/auth/post-login") {
-//   const user = await authManager.handleSigninCallback(doStart);
-// } else if (!authManager.checkAuth()) {
-//   authManager.login();
-// }
