@@ -5,15 +5,15 @@
   "scripts": {
     "root": "npm run start --workspace apps/root-config",
     "app1": "npm run start --workspace apps/app1",
-    "login": "npm run start --workspace apps/login"
+    "app2": "npm run start --workspace apps/app2"
   },
   "author": "",
   "license": "MIT",
   "workspaces": [
-    "apps/login",
     "apps/root-config",
     "lib",
-    "apps/app1"
+    "apps/app1",
+    "apps/app2"
   ],
   "dependencies": {
     "oidc-client": "^1.11.5"

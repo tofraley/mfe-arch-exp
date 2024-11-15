@@ -1,5 +1,5 @@
 {
-  "name": "@org/login",
+  "name": "@org/app2",
   "scripts": {
     "start": "webpack serve --port 9002",
     "start:standalone": "webpack serve --env standalone",
@@ -46,7 +46,7 @@
     "single-spa-react": "^4.3.1"
   },
   "version": "1.0.0",
-  "main": "src/org-login.js",
+  "main": "src/org-app2.js",
   "author": "",
   "license": "MIT",
   "description": ""
