@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Run All Tasks",
+      "configurations": ["Run root-config", "Run app1", "Run app2"],
+      "stopAll": true
+    }
+  ],
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run root-config",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "root"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run app1",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "app1"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run app2",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "app2"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
