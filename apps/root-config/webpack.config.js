@@ -20,7 +20,7 @@ module.exports = (webpackConfigEnv, argv) => {
         directory: path.join(__dirname, "public"),
       },
       headers: {
-        "Access-Control-Allow-Origin": "*", //['localhost', 'https://pgdev.clearent.net'],
+        "Access-Control-Allow-Origin": "*",
       },
     },
     // modify the webpack config however you'd like to by adding to this object
